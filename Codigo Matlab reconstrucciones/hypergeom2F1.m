@@ -1,22 +1,5 @@
 function h=hypergeom2F1(a,b,c,z,tol)
-%HYPERGEOM2F1  Gaussian or ordinary hypergeometric function for ABS(Z) < 1
-%   H = HYPERGEOM2F1(A,B,C,Z) returns the hypergeometric function 2F1 for scalar
-%   parameters A, B, C, and complex inputs Z. A finite number of terms from the
-%   infinite summation representation of the function are used until the
-%   absolute tolerance EPS is met.
-%
-%   H = HYPERGEOM2F1(...,TOL) specifies the absolute tolerance used to terminate
-%   the summation of terms.
-%   
-%   Note:
-%       Unless, C = A or C = B, if C is an integer <= 0, NaN is returned.
-%       Additionally, the simple method of computation used can be very
-%       inaccurate when ABS(Z) is close to 1 for some parameter combinations.
-%
-%   See also HYPERGEOM.
-%   Andrew D. Horchler, horchler @ gmail . com, Created 5-12-13
-%   Revision: 1.0, 5-19-14
-% Check four required inputs
+
 if isempty(a) || ~isscalar(a) || ~isfloat(a) || ~isreal(a) || ~isfinite(a)
     error('hypergeom2F1:AInvalid',...
           'A must be a non-empty finite real floating-point scalar.');
