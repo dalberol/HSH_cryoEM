@@ -15,7 +15,7 @@ if m>=0
 else 
     P_lm=(-1).^m.*(factorial(l-abs(m))./factorial(l+abs(m))).*L(1,:);
 end
-%display(P_lm);
+
 %Definición de los HS
 if m>0
     Y_lm=sqrt((2*l+1)/(2*pi)*factorial(l-m)./factorial(l+m))*cos(m.*phi);
@@ -26,7 +26,7 @@ end
 if m==0
     Y_lm=sqrt((2*l+1)/(4*pi));
 end
-%display(Y_lm);
+
 Y_nlm=P_lm.*Y_lm;
 
 %polinomios de Gegenbauer
