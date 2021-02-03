@@ -5,7 +5,7 @@ close all;
 map = ReadMRC('emd_11997.map'); %Llamar al archivo que contiene el modelo
 [Nx,Ny,Nz] = size(map); %tamaño del volumen
 
-%vamos a reducir el número de voxeles para que no esceda la RAM
+%vamos a reducir el número de voxeles para que no exceda la RAM
 downsampling = round(Nx/67);
 voxel=1.63;
 %reducimos nuestras coordenadas
