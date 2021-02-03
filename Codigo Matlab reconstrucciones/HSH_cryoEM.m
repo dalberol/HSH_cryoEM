@@ -21,19 +21,18 @@ y = y-mean2(y);
 z = z-mean2(z);
 
 %creamos una esfera en la que todos lo valores que sean mayores o igual que
-%el máximo de las coordenadas se anulen, es decir creamos la esfera de
-%proyección
+%el máximo de las coordenadas se anulen
 mask = sqrt(x.^2 + y.^2 + z.^2) <= (max(x(:)));
 
 %realizamos un cambio de coordenadas
 [r,theta,phi]=cartesianas2esfericas(x(mask),y(mask),z(mask));
 
-%vamos a realizar la proyección estereográfica de 3D a una hiperesfera de
+%proyección estereográfica de 3D a una hiperesfera de
 %4D cuyo radio lo definimos como p_o
 p_o=max(r(:));
 [R,chi]=ProyeccionStereografica(x(mask),y(mask),z(mask),p_o);
 
-%Grado n qu desaeamos nuestra reconstrucción
+%Grado n que desaeamos nuestra reconstrucción
 n=100;
 
 mapRecon = x.*0;
